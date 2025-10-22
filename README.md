@@ -136,7 +136,7 @@ source venv/bin/activate
 
 ### 3️⃣ Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 Atau install manual:
@@ -189,14 +189,24 @@ Jumlah iterasi: 5
 
 Program `kalkulator_secant.py` terdiri dari beberapa fungsi utama:
 
-### 1. `parse_function(func_str)`
+### 1. `Parse_Function`
 Mengkonversi string fungsi (misal: `"x*exp(-x)+cos(2*x)"`) menjadi fungsi Python yang dapat dievaluasi.
 ```python
-def parse_function(func_str):
-    return lambda x: eval(func_str, {"x": x, "exp": exp, "sin": sin, ...})
+def f(x_val, f_string):
+    safe_dict = {
+        'x': x_val,
+        'sin': math.sin,
+        'cos': math.cos,
+        'tan': math.tan,
+        'exp': math.exp,
+        'log': math.log,
+        'log10': math.log10,
+        'sqrt': math.sqrt,
+        'pi': math.pi,
+        'e': math.e
 ```
 
-### 2. `metode_secant(f, x0, x1, tol, max_iter)`
+### 2. `secant_method(f_string, x0, x1, e, N)`
 Implementasi inti algoritma Metode Secant yang mengembalikan:
 - Daftar iterasi (untuk tabel)
 - Hasil akhir (akar atau pesan error)
@@ -300,8 +310,6 @@ NumiSecant/
 ├── README.md               # Dokumentasi (file ini)
 ├
 │
-└── docs/                   # (Opsional) Folder dokumentasi tambahan
-    └── screenshot.png      # Screenshot hasil running program
 ```
 
 ---
