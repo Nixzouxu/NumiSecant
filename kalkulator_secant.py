@@ -84,3 +84,17 @@ def display_ui_and_get_input():
     """
     Fungsi untuk menampilkan UI dan mengambil input dari user.
     """
+# Bersihkan layar terminal
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
+    # Tampilkan banner/judul program
+    banner = pyfiglet.figlet_format("Kalkulator\nMetode Secant", font="slant")
+    console.print(f"[bold green]{banner}[/bold green]")
+    console.print(Panel.fit("[bold]Masukkan detail persamaan dan parameter yang dibutuhkan[/bold]", style="green", border_style="yellow"))
+
+    # Ambil semua input dari user
+    f_string = console.input("[cyan]  Masukkan Fungsi F(X) (cth: x**3 - x - 2 atau 4*sin(x) - exp(x)): [/cyan]")
+    x0 = float(console.input("[cyan]  Masukkan tebakan awal x0: [/cyan]"))
+    x1 = float(console.input("[cyan]  Masukkan tebakan awal x1: [/cyan]"))
+    e = float(console.input("[cyan]  Masukkan toleransi error (e), cth: 0.0001: [/cyan]"))
+    N = int(console.input("[cyan]  Masukkan maksimum iterasi (N): [/cyan]"))
