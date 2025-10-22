@@ -98,3 +98,28 @@ def display_ui_and_get_input():
     x1 = float(console.input("[cyan]  Masukkan tebakan awal x1: [/cyan]"))
     e = float(console.input("[cyan]  Masukkan toleransi error (e), cth: 0.0001: [/cyan]"))
     N = int(console.input("[cyan]  Masukkan maksimum iterasi (N): [/cyan]"))
+
+    return f_string, x0, x1, e, N
+
+def display_table(data):
+    """
+    Fungsi untuk menampilkan data hasil iterasi dalam bentuk tabel.
+    """
+    if not data:
+        return
+
+    # Buat objek tabel dengan judul dan style
+    table = Table(title="[bold]Tabel Iterasi Metode Secant[/bold]", show_header=True, header_style="bold magenta")
+    
+    # Definisikan kolom-kolom tabel sesuai permintaan
+    table.add_column("i", style="dim", width=5, justify="center")
+    table.add_column("x0", justify="right")
+    table.add_column("x1", justify="right")
+    table.add_column("y0 = F(x0)", justify="right")
+    table.add_column("y1 = F(x1)", justify="right")
+    table.add_column("xi", justify="right", style="cyan")
+    table.add_column("|F(xi)|", justify="right", style="green")
+
+    # Isi tabel dengan data dari setiap baris (iterasi)
+    for row in data:
+        table.add_row(
