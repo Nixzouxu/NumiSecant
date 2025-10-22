@@ -123,3 +123,28 @@ def display_table(data):
     # Isi tabel dengan data dari setiap baris (iterasi)
     for row in data:
         table.add_row(
+            f"{row[0]}",
+            f"{row[1]:.6f}", # Format angka menjadi 6 desimal
+            f"{row[2]:.6f}",
+            f"{row[3]:.6f}",
+            f"{row[4]:.6f}",
+            f"{row[5]:.6f}",
+            f"{row[6]:.6f}"
+        )
+    
+    console.print(table)
+
+#  Program Utama 
+if __name__ == "__main__":
+    # 1. Tampilkan UI dan dapatkan input
+    f_string, x0, x1, e, N = display_ui_and_get_input()
+    
+    # 2. Jalankan metode Secant dengan input yang diberikan
+    data, message = secant_method(f_string, x0, x1, e, N)
+    
+    # 3. Jika ada data hasil iterasi, tampilkan dalam tabel
+    if data:
+        display_table(data)
+    
+    # 4. Tampilkan pesan hasil akhir (apakah solusi ditemukan atau tidak)
+    console.print(Panel(Text(message, justify="center"), title="[bold]Hasil Akhir[/bold]", border_style="green", padding=(1, 2)))
