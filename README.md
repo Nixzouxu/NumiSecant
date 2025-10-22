@@ -415,9 +415,9 @@ Berikut fitur yang bisa ditambahkan di masa depan:
 **Tim 6** — Proyek Metode Numerik  
 - Muhammad Hafidz
 - Muhammad Yazid Arrazi
-- Zahra Rizkyna
-- Azira Kania
 - Muhammad Al Hafiz
+- Azira Kania
+- Zahra Rizkyna
 - Syakila Naira
 
 Jika ada pertanyaan atau saran, silakan buat **Issue** di repository ini! 🚀
