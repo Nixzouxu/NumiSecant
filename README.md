@@ -73,7 +73,7 @@ Dimana:
 
 1. **Definisikan nilai awal**: Tentukan dua tebakan awal $x_0$ dan $x_1$
 2. **Tentukan kriteria berhenti**: 
-   - Toleransi error ($e$) — misal: `1e-4`
+   - Toleransi error ($e$) — misal: `0.0001`
    - Maksimal iterasi ($N$) — misal: `20`
 3. **Hitung nilai fungsi awal**: 
    - $y_0 = f(x_0)$
