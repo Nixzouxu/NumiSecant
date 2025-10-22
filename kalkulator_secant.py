@@ -48,3 +48,28 @@ def secant_method(f_string, x0, x1, e, N):
     for i in range(1, N + 1):
         y0 = f(x0, f_string)
         y1 = f(x1, f_string)
+        
+        # Jika evaluasi fungsi gagal, hentikan program
+        if y0 is None or y1 is None:
+            return None, "Gagal mengevaluasi f(x). Program berhenti."
+
+        # Cek kondisi pembagian dengan nol untuk mencegah error
+        if abs(y1 - y0) < 1e-12: # Angka yang sangat kecil
+            return table_data, "Pembagian dengan nol terdeteksi (y1 - y0 sangat kecil). Metode gagal."
+
+        # Algoritma Metode Secant sesuai flowchart
+        xi = x1 - y1 * (x1 - x0) / (y1 - y0)
+        f_xi = f(xi, f_string)
+
+        if f_xi is None:
+            return table_data, "Gagal mengevaluasi f(xi). Program berhenti."
+
+        abs_f_xi = abs(f_xi)
+
+        # Simpan semua data iterasi ke dalam list untuk ditampilkan di tabel
+        table_data.append([i, x0, x1, y0, y1, xi, abs_f_xi])
+
+        # Cek kondisi berhenti: jika |F(xi)| sudah lebih kecil dari toleransi error
+        if abs_f_xi < e:
+            return table_data, f"Solusi ditemukan! Akar penyelesaian adalah x = {xi:.6f}"
+
