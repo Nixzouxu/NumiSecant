@@ -306,7 +306,7 @@ Mulai dengan interval lebar (misal: `x0=0`, `x1=5`), lalu persempit jika tidak k
 NumiSecant/
 │
 ├── kalkulator_secant.py    # Program utama
-├── requirements.txt        # Daftar dependensi
+├── requirement.txt        # Daftar dependensi
 ├── README.md               # Dokumentasi (file ini)
 ├
 │
@@ -316,7 +316,7 @@ NumiSecant/
 
 ## 📦 Dependencies
 
-File `requirements.txt`:
+File `requirement.txt`:
 ```txt
 rich==13.7.0
 pyfiglet==1.0.2
@@ -324,7 +324,7 @@ pyfiglet==1.0.2
 
 Instalasi:
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 ---
@@ -375,7 +375,7 @@ README ini dianggap **selesai dan memenuhi standar** jika:
 - [x] Penanganan error (pembagian nol, parsing error) dijelaskan
 - [x] Tips memilih `x0` & `x1` (grafik, perubahan tanda) disertakan
 - [x] Struktur proyek ditampilkan (tree sederhana)
-- [x] File `requirements.txt` contoh disediakan
+- [x] File `requirement.txt` contoh disediakan
 - [x] Panduan kontribusi & kode etik singkat ada
 - [x] Lisensi (Unlicensed) disebutkan
 - [x] Checklist "Acceptance Criteria" ada di akhir
