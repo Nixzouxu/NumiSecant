@@ -73,3 +73,14 @@ def secant_method(f_string, x0, x1, e, N):
         if abs_f_xi < e:
             return table_data, f"Solusi ditemukan! Akar penyelesaian adalah x = {xi:.6f}"
 
+# Update nilai untuk iterasi selanjutnya
+        x0 = x1
+        x1 = xi
+
+    # Jika loop selesai tapi solusi tidak ditemukan
+    return table_data, f"Metode tidak konvergen setelah {N} iterasi."
+
+def display_ui_and_get_input():
+    """
+    Fungsi untuk menampilkan UI dan mengambil input dari user.
+    """
