@@ -122,7 +122,7 @@ def display_table(data):
 
     # Isi tabel dengan data dari setiap baris (iterasi)
     for row in data:
-        table.add_row(
+            table.add_row(
             f"{row[0]}",
             f"{row[1]:.6f}", # Format angka menjadi 6 desimal
             f"{row[2]:.6f}",
